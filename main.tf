@@ -71,8 +71,8 @@ resource "azurerm_network_interface" "nic-1" {
     azurerm_public_ip.public_ip
   ]
 }
-resource "azurerm_linux_virtual_machine" "windows_vm" {
-  name                = "windows_vm"
+resource "azurerm_linux_virtual_machine" "linux_vm" {
+  name                = "linux_vm"
   resource_group_name = azurerm_resource_group.Raghunandan_pattar.name
   location            = azurerm_resource_group.Raghunandan_pattar.location
   size                = "Standard_F2"
@@ -95,13 +95,8 @@ resource "azurerm_linux_virtual_machine" "windows_vm" {
   }
 }
 resource "azurerm_public_ip" "public_ip" {
-
-name = "public_ip"
-
-location = azurerm_resource_group.Raghunandan_pattar.location
-
-resource_group_name = azurerm_resource_group.Raghunandan_pattar.name
-
-allocation_method = "Static"
-
+  name = "public_ip"
+  location = azurerm_resource_group.Raghunandan_pattar.location
+  resource_group_name = azurerm_resource_group.Raghunandan_pattar.name
+  allocation_method = "Static"
 }
