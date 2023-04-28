@@ -66,6 +66,7 @@ resource "azurerm_linux_virtual_machine" "lnxvm" {
   size                = "Standard_F2"
   admin_username      = "raghu"
   admin_password      = "Raghupattar_2504"
+  disable_password_authentication = false
   network_interface_ids = [
     azurerm_network_interface.nniicc.id,
   ]
